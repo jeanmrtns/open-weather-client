@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo aqui e agora</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="mx-auto container mt-16 flex flex-col items-center">
+        <h1
+            class="text-violet-500 text-4xl font-bold text-center mb-4"
+        >
+        Weather API
+        </h1>
+
+        <form id="searchForm" class="w-9/12 border border-zinc-200 rounded p-2 flex flex-col gap-4">
+            <div class="flex flex-col gap-1">
+                <label for="city">Nome da cidade:</label>
+                <input id="city" type="text" placeholder="Varginha" class="p-1 outline outline outline-1 outline-zinc-300 rounded focus:outline-2 focus:outline-indigo-500" />
+            </div>
+
+             <div class="flex flex-col gap-1">
+                <label for="state">Nome do Estado:</label>
+                <input id="state" type="text" placeholder="MG" class="p-1 outline outline outline-1 outline-zinc-300 rounded focus:outline-2 focus:outline-indigo-500" />
+            </div>
+
+            <button type="submit" id="search" class="px-1 py-2 w-64 bg-indigo-500 text-zinc-50 rounded hover:bg-indigo-700 transition-colors">Carregar tempo</button>
+        </form>
+    </main>
+    
+    <script src="main.js"></script>
+</body>
+</html>
