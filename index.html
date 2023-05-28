@@ -7,27 +7,37 @@
     <title>Tempo aqui e agora</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-cover bg-center bg-no-repeat h-screen m-0 overflow-hidden">
     <main class="mx-auto container mt-16 flex flex-col items-center">
-        <h1
-            class="text-violet-500 text-4xl font-bold text-center mb-4"
-        >
-        Weather API
-        </h1>
-
-        <form id="searchForm" class="w-9/12 border border-zinc-200 rounded p-2 flex flex-col gap-4">
+        <form id="searchForm" class="w-9/12 bg-white border border-zinc-200 rounded p-2 flex flex-col gap-4">
+            <h1
+                class="text-violet-500 text-4xl font-bold text-center mb-4"
+            >
+                Weather API
+            </h1>
             <div class="flex flex-col gap-1">
                 <label for="city">Nome da cidade:</label>
                 <input id="city" type="text" placeholder="Varginha" class="p-1 outline outline outline-1 outline-zinc-300 rounded focus:outline-2 focus:outline-indigo-500" />
             </div>
 
              <div class="flex flex-col gap-1">
-                <label for="state">Nome do Estado:</label>
-                <input id="state" type="text" placeholder="MG" class="p-1 outline outline outline-1 outline-zinc-300 rounded focus:outline-2 focus:outline-indigo-500" />
+                <label for="country">País:</label>
+                <input id="country" type="text" placeholder="Brazil" class="p-1 outline outline outline-1 outline-zinc-300 rounded focus:outline-2 focus:outline-indigo-500" />
             </div>
 
-            <button type="submit" id="search" class="px-1 py-2 w-64 bg-indigo-500 text-zinc-50 rounded hover:bg-indigo-700 transition-colors">Carregar tempo</button>
+            <button type="submit" id="search" class="px-1 py-2 w-64 bg-indigo-500 text-zinc-50 rounded hover:bg-indigo-700 transition-colors disabled:bg-zinc-400 disabled:hover:bg-zinc-400 disabled:cursor-not-allowed">Carregar tempo</button>
         </form>
+
+        <div id="info" class="bg-white rounded mt-4 p-2 w-9/12 hidden">
+            <h3 class="text-2xl text-center text-indigo-500">Condicoes</h3>
+
+            <ul>
+                <li>Condicao do tempo: <span id="condition"></span></li>
+                <li>País: <span id="countryName"></span></li>
+                <li>Cidade: <span id="cityName"></span></li>
+                <li>Temperatura: <span id="temp"></span></li>
+            </ul>
+        </div>
     </main>
     
     <script src="main.js"></script>
